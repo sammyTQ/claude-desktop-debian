@@ -23,9 +23,52 @@ If you run into an issue with this build script, make an issue here. Don't bug A
 
 This project was inspired by [k3d3's claude-desktop-linux-flake](https://github.com/k3d3/claude-desktop-linux-flake) and their [Reddit post](https://www.reddit.com/r/ClaudeAI/comments/1hgsmpq/i_successfully_ran_claude_desktop_natively_on/) about running Claude Desktop natively on Linux. Their work provided valuable insights into the application's structure and the native bindings implementation.
 
-Supports MCP!
+## MCP (Model Context Protocol) Support
 
-Location of the MCP-configuration file is: `~/.config/Claude/claude_desktop_config.json`
+Claude Desktop for Linux includes full support for MCP servers, allowing Claude to interact with external tools and data sources.
+
+**📖 [Complete MCP Integration Guide](docs/MCP_INTEGRATION.md)**
+
+### Quick MCP Setup
+
+```bash
+# Install MCP dependencies
+./scripts/install-mcp-deps.sh
+
+# Set up a filesystem MCP server (interactive)
+./scripts/setup-mcp-servers.sh install filesystem
+
+# Validate your MCP configuration
+./scripts/validate-mcp-config.sh
+
+# View setup status
+./scripts/setup-mcp-servers.sh status
+```
+
+### Available Helper Scripts
+
+- **`scripts/install-mcp-deps.sh`** - Install Python MCP SDK and dependencies
+- **`scripts/setup-mcp-servers.sh`** - Interactive MCP server installation and configuration
+- **`scripts/validate-mcp-config.sh`** - Validate MCP configuration syntax and setup
+
+### Configuration Location
+MCP configuration file: `~/.config/Claude/claude_desktop_config.json`
+
+### Example Configurations
+- [Basic Filesystem](docs/examples/basic-filesystem.json) - File operations
+- [Complete Setup](docs/examples/complete-setup.json) - Multiple servers
+- [Database Servers](docs/examples/database-servers.json) - SQLite/PostgreSQL
+- [Custom Linux Server](docs/examples/custom-linux-server.json) - System monitoring tools
+
+### Custom Linux System MCP Server
+
+This repository includes a custom MCP server example specifically designed for Linux system administration:
+
+- **File**: [`docs/examples/linux-system-mcp-server.py`](docs/examples/linux-system-mcp-server.py)
+- **Features**: System info, process monitoring, disk usage, network info, safe command execution
+- **Requirements**: `pip install mcp psutil`
+
+See the [MCP Integration Guide](docs/MCP_INTEGRATION.md) for setup instructions.
 
 ![image](https://github.com/user-attachments/assets/93080028-6f71-48bd-8e59-5149d148cd45)
 

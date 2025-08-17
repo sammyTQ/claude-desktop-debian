@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/home/user/Documents"
+      ],
+      "env": {
+        "NODE_OPTIONS": "--max-old-space-size=4096"
+      }
+    }
+  }
+}
