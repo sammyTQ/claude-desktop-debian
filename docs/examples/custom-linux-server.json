@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "linux-system-tools": {
+      "command": "python3",
+      "args": [
+        "~/claude-desktop-debian/docs/examples/linux-system-mcp-server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "~/claude-desktop-debian/docs/examples"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/home/user/Documents"
+      ]
+    }
+  }
+}
