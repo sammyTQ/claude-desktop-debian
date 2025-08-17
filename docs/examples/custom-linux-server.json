@@ -3,10 +3,10 @@
     "linux-system-tools": {
       "command": "python3",
       "args": [
-        "/path/to/claude-desktop-debian/docs/examples/linux-system-mcp-server.py"
+        "~/claude-desktop-debian/docs/examples/linux-system-mcp-server.py"
       ],
       "env": {
-        "PYTHONPATH": "/path/to/claude-desktop-debian/docs/examples"
+        "PYTHONPATH": "~/claude-desktop-debian/docs/examples"
       }
     },
     "filesystem": {
